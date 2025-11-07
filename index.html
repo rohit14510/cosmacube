@@ -1,0 +1,1177 @@
+<!DOCTYPE html>
+<html lang="hi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cosmacube</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" href="./assets/Css/style.css" />
+  </head>
+  <body>
+    <!-- Announcement Bar -->
+    <div class="announcement-bar">
+      Buy 3 @₹1099 + 3 Free Gifts
+      <button
+        class="announcement-close"
+        onclick="this.parentElement.style.display='none'"
+      >
+        ×
+      </button>
+    </div>
+
+    <!-- Desktop Header -->
+    <header class="main-header">
+      <div class="container">
+        <!-- Logo -->
+        <a href="#" class="brand-logo"
+          ><img src="assets/images/log.png" class="log-image" alt=""
+        /></a>
+
+        <!-- Navigation -->
+        <nav>
+          <ul class="main-nav">
+            <li class="nav-item">
+              <a class="nav-link" data-category="body-care">Body Care</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-category="face-care">Face Care</a>
+            </li>
+          </ul>
+        </nav>
+
+        <!-- Search Bar -->
+        <div class="search-wrapper">
+          <input
+            type="text"
+            class="search-input"
+            placeholder="Search for products..."
+            id="desktopSearch"
+          />
+          <i class="fas fa-search search-icon"></i>
+          <div class="search-results" id="desktopSearchResults"></div>
+        </div>
+
+        <!-- Header Actions -->
+        <div class="header-actions">
+          <button class="action-btn">
+            <i class="fas fa-heart"></i>
+            <span class="badge-indicator">3</span>
+          </button>
+          <button class="action-btn">
+            <i class="fas fa-user"></i>
+          </button>
+          <button class="action-btn">
+            <i class="fas fa-shopping-bag"></i>
+            <span class="badge-indicator">2</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Dropdown Overlay -->
+    <div class="dropdown-overlay" id="dropdownOverlay"></div>
+
+    <!-- Body Care Mega Dropdown -->
+    <div class="mega-dropdown" id="bodyCareDropdown">
+      <div class="dropdown-content">
+        <div class="category-grid">
+          <div class="category-card" data-product="body-lotion">
+            <img
+              src="https://images.unsplash.com/photo-1556228720-195a672e8a03?w=400"
+              alt="Body Lotion"
+            />
+            <div class="category-name">Body Lotion</div>
+          </div>
+          <div class="category-card" data-product="body-wash">
+            <img
+              src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=400"
+              alt="Body Wash"
+            />
+            <div class="category-name">Body Wash</div>
+          </div>
+          <div class="category-card" data-product="body-scrub">
+            <img
+              src="https://images.unsplash.com/photo-1591360236480-4ed861025fa1?w=400"
+              alt="Body Scrub"
+            />
+            <div class="category-name">Body Scrub</div>
+          </div>
+          <div class="category-card" data-product="body-oil">
+            <img
+              src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=400"
+              alt="Body Oil"
+            />
+            <div class="category-name">Body Oil</div>
+          </div>
+          <div class="category-card" data-product="hand-cream">
+            <img
+              src="https://images.unsplash.com/photo-1612817288484-6f916006741a?w=400"
+              alt="Hand Cream"
+            />
+            <div class="category-name">Hand Cream</div>
+          </div>
+          <div class="category-card" data-product="sunscreen">
+            <img
+              src="https://images.unsplash.com/photo-1571875257727-256c39da42af?w=400"
+              alt="Sunscreen"
+            />
+            <div class="category-name">Sunscreen</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Face Care Mega Dropdown -->
+    <div class="mega-dropdown" id="faceCareDropdown">
+      <div class="dropdown-content">
+        <div class="category-grid">
+          <div class="category-card" data-product="cleanser">
+            <img
+              src="https://images.unsplash.com/photo-1556228578-0d85b1a4d571?w=400"
+              alt="Cleanser"
+            />
+            <div class="category-name">Cleanser</div>
+          </div>
+          <div class="category-card" data-product="serum">
+            <img
+              src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=400"
+              alt="Serum"
+            />
+            <div class="category-name">Serum</div>
+          </div>
+          <div class="category-card" data-product="face-mask">
+            <img
+              src="https://images.unsplash.com/photo-1570554886111-e80fcca6a029?w=400"
+              alt="Face Mask"
+            />
+            <div class="category-name">Face Mask</div>
+          </div>
+          <div class="category-card" data-product="moisturizer">
+            <img
+              src="https://images.unsplash.com/photo-1556228852-80a0e536a555?w=400"
+              alt="Moisturizer"
+            />
+            <div class="category-name">Moisturizer</div>
+          </div>
+          <div class="category-card" data-product="toner">
+            <img
+              src="https://images.unsplash.com/photo-1617897903246-719242758050?w=400"
+              alt="Toner"
+            />
+            <div class="category-name">Toner</div>
+          </div>
+          <div class="category-card" data-product="eye-cream">
+            <img
+              src="https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?w=400"
+              alt="Eye Cream"
+            />
+            <div class="category-name">Eye Cream</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Header -->
+    <header class="mobile-header">
+      <div class="mobile-header-inner">
+        <button class="mobile-menu-btn" id="mobileMenuBtn">
+          <i class="fas fa-bars"></i>
+        </button>
+        <a href="#" class="mobile-logo text-center"><img src="assets/images/log.png" alt=""></a>
+        <button class="mobile-search-btn" id="mobileSearchBtn">
+          <i class="fas fa-search"></i>
+        </button>
+      </div>
+    </header>
+
+    <!-- Mobile Sidebar -->
+    <div class="mobile-sidebar" id="mobileSidebar">
+      <div class="sidebar-header">
+        <h5>Categories</h5>
+        <button class="sidebar-close-btn" id="sidebarClose">×</button>
+      </div>
+      <div class="sidebar-menu">
+        <div class="sidebar-category">
+          <div class="category-header" data-toggle="bodyCareSubmenu">
+            <span>Body Care</span>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="category-submenu" id="bodyCareSubmenu">
+            <div class="submenu-item" data-product="body-lotion">
+              <img
+                src="https://images.unsplash.com/photo-1556228720-195a672e8a03?w=100"
+                alt=""
+              />
+              <span>Body Lotion</span>
+            </div>
+            <div class="submenu-item" data-product="body-wash">
+              <img
+                src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=100"
+                alt=""
+              />
+              <span>Body Wash</span>
+            </div>
+            <div class="submenu-item" data-product="body-scrub">
+              <img
+                src="https://images.unsplash.com/photo-1591360236480-4ed861025fa1?w=100"
+                alt=""
+              />
+              <span>Body Scrub</span>
+            </div>
+            <div class="submenu-item" data-product="body-oil">
+              <img
+                src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=100"
+                alt=""
+              />
+              <span>Body Oil</span>
+            </div>
+            <div class="submenu-item" data-product="hand-cream">
+              <img
+                src="https://images.unsplash.com/photo-1612817288484-6f916006741a?w=100"
+                alt=""
+              />
+              <span>Hand Cream</span>
+            </div>
+            <div class="submenu-item" data-product="sunscreen">
+              <img
+                src="https://images.unsplash.com/photo-1571875257727-256c39da42af?w=100"
+                alt=""
+              />
+              <span>Sunscreen</span>
+            </div>
+          </div>
+        </div>
+        <div class="sidebar-category">
+          <div class="category-header" data-toggle="faceCareSubmenu">
+            <span>Face Care</span>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="category-submenu" id="faceCareSubmenu">
+            <div class="submenu-item" data-product="cleanser">
+              <img
+                src="https://images.unsplash.com/photo-1556228578-0d85b1a4d571?w=100"
+                alt=""
+              />
+              <span>Cleanser</span>
+            </div>
+            <div class="submenu-item" data-product="serum">
+              <img
+                src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=100"
+                alt=""
+              />
+              <span>Serum</span>
+            </div>
+            <div class="submenu-item" data-product="face-mask">
+              <img
+                src="https://images.unsplash.com/photo-1570554886111-e80fcca6a029?w=100"
+                alt=""
+              />
+              <span>Face Mask</span>
+            </div>
+            <div class="submenu-item" data-product="moisturizer">
+              <img
+                src="https://images.unsplash.com/photo-1556228852-80a0e536a555?w=100"
+                alt=""
+              />
+              <span>Moisturizer</span>
+            </div>
+            <div class="submenu-item" data-product="toner">
+              <img
+                src="https://images.unsplash.com/photo-1617897903246-719242758050?w=100"
+                alt=""
+              />
+              <span>Toner</span>
+            </div>
+            <div class="submenu-item" data-product="eye-cream">
+              <img
+                src="https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?w=100"
+                alt=""
+              />
+              <span>Eye Cream</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Search Modal -->
+    <div class="search-modal" id="searchModal">
+      <div class="search-modal-header">
+        <button class="search-modal-back" id="searchModalClose">
+          <i class="fas fa-arrow-left"></i>
+        </button>
+        <input
+          type="text"
+          class="search-modal-input"
+          placeholder="Search products..."
+          id="mobileSearch"
+        />
+      </div>
+      <div class="search-modal-results" id="mobileSearchResults"></div>
+    </div>
+
+    <!-- Page Overlay -->
+    <div class="page-overlay" id="pageOverlay"></div>
+
+    <!-- Mobile Bottom Navigation -->
+    <nav class="mobile-bottom-nav">
+      <div class="bottom-nav-items">
+        <a href="#" class="nav-item-btn active">
+          <i class="fas fa-home"></i>
+          <span>Home</span>
+        </a>
+        <a href="#" class="nav-item-btn">
+          <i class="fas fa-spa"></i>
+          <span>Shop</span>
+        </a>
+        <a href="#" class="nav-item-btn">
+          <i class="fas fa-shopping-cart"></i>
+          <span>Cart</span>
+          <span class="badge-indicator">2</span>
+        </a>
+        <a href="#" class="nav-item-btn">
+          <i class="fas fa-heart"></i>
+          <span>Wishlist</span>
+          <span class="badge-indicator">3</span>
+        </a>
+        <a href="#" class="nav-item-btn">
+          <i class="fas fa-user"></i>
+          <span>Account</span>
+        </a>
+      </div>
+    </nav>
+
+    <!-- Demo Content -->
+    <!-- ======Hero-Section-Start====== -->
+    <section>
+      <div class="container-fluid p-0">
+        <div class="swiper heroSwiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img src="assets/images/h-1.png" width="100%" alt="Image 1" />
+            </div>
+            <div class="swiper-slide">
+              <img src="assets/images/h-2.png" width="100%" alt="Image 2" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ======Hero-Section-End====== -->
+    <!-- ======Category-Section-Start====== -->
+    <section>
+      <div class="container-fluid p-100">
+        <div class="row g-4">
+          <div class="col-lg-6">
+            <div class="cat-card-section">
+              <div class="cat-img-container">
+                <img src="assets/images/cat-1.png" width="100%" alt="" />
+              </div>
+              <div class="cat-text-section">
+                <p class="">UP TO 30% DISCOUNT</p>
+                <h4 class="">Brightening & Radiance</h4>
+                <button class="cat-button">SHOP NOW</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="cat-card-section">
+              <div class="cat-img-container">
+                <img src="assets/images/cat-2.png" width="100%" alt="" />
+              </div>
+              <div class="cat-text-section">
+                <p class="">Nebon Collection</p>
+                <h4 class="">Basic Skincare Routine</h4>
+                <button class="cat-button">SHOP NOW</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ======Category-Section-End====== -->
+    <!-- ======All-Products-Section-Start====== -->
+    <section class="All-Product-Section">
+      <div class="container-fluid p-100">
+        <div class="text-center mb-lg-5">
+          <h2 class="fw-bold mb-2">Our Premium Collection</h2>
+          <p class="text-muted">
+            Choose from our finest range of skin and body care products
+          </p>
+        </div>
+        <div class="row">
+          <div class="col text-lg-end text-center">
+            <div class="btn-group" role="group">
+              <button
+                type="button"
+                class="btn btn-light category-btn"
+                data-category="body"
+              >
+                Body Care
+              </button>
+              <button
+                type="button"
+                class="btn btn-light category-btn"
+                data-category="skin"
+              >
+                Skin Care
+              </button>
+              <button
+                type="button"
+                class="btn btn-light category-btn active"
+                data-category="all"
+              >
+                All Product
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Body Section -->
+        <div id="bodySection">
+          <div class="row g-4 mt-2">
+            <div class="col-md-6 text-end">
+              <div
+                class="product-card position-relative p-3 border-0 rounded-3 shadow-sm overflow-hidden"
+              >
+                <button class="wishlist-btn">
+                  <i class="fas fa-heart"></i>
+                </button>
+
+                <div class="row align-items-center justify-content-end">
+                  <div class="col-6">
+                    <div class="product-info text-start">
+                      <h5 class="product-title">Anti-Aging Face Cream</h5>
+
+                      <div class="product-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star text-muted"></i>
+                        <span class="rating-count">(125)</span>
+                      </div>
+
+                      <p class="price">
+                        <span class="old-price">₹800.00</span>
+                        <span class="new-price">₹499.00</span>
+                      </p>
+
+                      <button type="button" class="cart-button btn btn-sm">
+                        <i class="fas fa-shopping-cart me-1"></i> Add to Cart
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="col-6">
+                    <div class="product-img-wrapper">
+                      <span class="discount-badge">-40%</span>
+
+                      <img
+                        src="assets/images/p-1.webp"
+                        class="primary-img"
+                        alt="Anti-Aging Face Cream"
+                      />
+
+                      <img
+                        src="assets/images/p-2.webp"
+                        class="secondary-img"
+                        alt="Anti-Aging Face Cream Hover"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 text-end">
+              <div
+                class="product-card position-relative p-3 border-0 rounded-3 shadow-sm overflow-hidden"
+              >
+                <button class="wishlist-btn">
+                  <i class="fas fa-heart"></i>
+                </button>
+
+                <div class="row align-items-center justify-content-end">
+                  <div class="col-6">
+                    <div class="product-info text-start">
+                      <h5 class="product-title">Anti-Aging Face Cream</h5>
+
+                      <div class="product-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star text-muted"></i>
+                        <span class="rating-count">(125)</span>
+                      </div>
+
+                      <p class="price">
+                        <span class="old-price">₹800.00</span>
+                        <span class="new-price">₹499.00</span>
+                      </p>
+
+                      <button type="button" class="cart-button btn btn-sm">
+                        <i class="fas fa-shopping-cart me-1"></i> Add to Cart
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="col-6">
+                    <div class="product-img-wrapper">
+                      <span class="discount-badge">-40%</span>
+
+                      <img
+                        src="assets/images/p-1.webp"
+                        class="primary-img"
+                        alt="Anti-Aging Face Cream"
+                      />
+
+                      <img
+                        src="assets/images/p-2.webp"
+                        class="secondary-img"
+                        alt="Anti-Aging Face Cream Hover"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 text-end">
+              <div
+                class="product-card position-relative p-3 border-0 rounded-3 shadow-sm overflow-hidden"
+              >
+                <button class="wishlist-btn">
+                  <i class="fas fa-heart"></i>
+                </button>
+
+                <div class="row align-items-center justify-content-end">
+                  <div class="col-6">
+                    <div class="product-info text-start">
+                      <h5 class="product-title">Anti-Aging Face Cream</h5>
+
+                      <div class="product-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star text-muted"></i>
+                        <span class="rating-count">(125)</span>
+                      </div>
+
+                      <p class="price">
+                        <span class="old-price">₹800.00</span>
+                        <span class="new-price">₹499.00</span>
+                      </p>
+
+                      <button type="button" class="cart-button btn btn-sm">
+                        <i class="fas fa-shopping-cart me-1"></i> Add to Cart
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="col-6">
+                    <div class="product-img-wrapper">
+                      <span class="discount-badge">-40%</span>
+
+                      <img
+                        src="assets/images/p-1.webp"
+                        class="primary-img"
+                        alt="Anti-Aging Face Cream"
+                      />
+
+                      <img
+                        src="assets/images/p-2.webp"
+                        class="secondary-img"
+                        alt="Anti-Aging Face Cream Hover"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 text-end">
+              <div
+                class="product-card position-relative p-3 border-0 rounded-3 shadow-sm overflow-hidden"
+              >
+                <button class="wishlist-btn">
+                  <i class="fas fa-heart"></i>
+                </button>
+
+                <div class="row align-items-center justify-content-end">
+                  <div class="col-6">
+                    <div class="product-info text-start">
+                      <h5 class="product-title">Anti-Aging Face Cream</h5>
+
+                      <div class="product-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star text-muted"></i>
+                        <span class="rating-count">(125)</span>
+                      </div>
+
+                      <p class="price">
+                        <span class="old-price">₹800.00</span>
+                        <span class="new-price">₹499.00</span>
+                      </p>
+
+                      <button type="button" class="cart-button btn btn-sm">
+                        <i class="fas fa-shopping-cart me-1"></i> Add to Cart
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="col-6">
+                    <div class="product-img-wrapper">
+                      <span class="discount-badge">-40%</span>
+
+                      <img
+                        src="assets/images/p-1.webp"
+                        class="primary-img"
+                        alt="Anti-Aging Face Cream"
+                      />
+
+                      <img
+                        src="assets/images/p-2.webp"
+                        class="secondary-img"
+                        alt="Anti-Aging Face Cream Hover"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Skin Section -->
+        <div id="skinSection">
+          <div class="row g-4 mt-2">
+       <div class="col-md-6  text-end">
+            <div
+              class="product-card position-relative p-3 border-0 rounded-3 shadow-sm overflow-hidden"
+            >
+             
+              <button class="wishlist-btn">
+                <i class="fas fa-heart"></i>
+              </button>
+
+              <div class="row align-items-center justify-content-end">
+                <div class="col-6">
+                  <div class="product-info text-start">
+                    <h5 class="product-title">Anti-Aging Face Cream</h5>
+
+                    <div class="product-rating">
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star text-muted"></i>
+                      <span class="rating-count">(125)</span>
+                    </div>
+
+                    <p class="price">
+                      <span class="old-price">₹800.00</span>
+                      <span class="new-price">₹499.00</span>
+                    </p>
+
+                    <button type="button" class="cart-button btn btn-sm">
+                      <i class="fas fa-shopping-cart me-1"></i> Add to Cart
+                    </button>
+                  </div>
+                </div>
+
+                <div class="col-6">
+                  <div class="product-img-wrapper">
+                  
+                    <span class="discount-badge">-40%</span>
+                  
+                    <img
+                      src="assets/images/p-1.webp"
+                      class="primary-img"
+                      alt="Anti-Aging Face Cream"
+                    />
+                
+                    <img
+                      src="assets/images/p-2.webp"
+                      class="secondary-img"
+                      alt="Anti-Aging Face Cream Hover"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+             <div class="col-md-6  text-end">
+            <div
+              class="product-card position-relative p-3 border-0 rounded-3 shadow-sm overflow-hidden"
+            >
+             
+              <button class="wishlist-btn">
+                <i class="fas fa-heart"></i>
+              </button>
+
+              <div class="row align-items-center justify-content-end">
+                <div class="col-6">
+                  <div class="product-info text-start">
+                    <h5 class="product-title">Anti-Aging Face Cream</h5>
+
+                    <div class="product-rating">
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star text-muted"></i>
+                      <span class="rating-count">(125)</span>
+                    </div>
+
+                    <p class="price">
+                      <span class="old-price">₹800.00</span>
+                      <span class="new-price">₹499.00</span>
+                    </p>
+
+                    <button type="button" class="cart-button btn btn-sm">
+                      <i class="fas fa-shopping-cart me-1"></i> Add to Cart
+                    </button>
+                  </div>
+                </div>
+
+                <div class="col-6">
+                  <div class="product-img-wrapper">
+                  
+                    <span class="discount-badge">-40%</span>
+                  
+                    <img
+                      src="assets/images/p-1.webp"
+                      class="primary-img"
+                      alt="Anti-Aging Face Cream"
+                    />
+                
+                    <img
+                      src="assets/images/p-2.webp"
+                      class="secondary-img"
+                      alt="Anti-Aging Face Cream Hover"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======All-Products-Section-End====== -->
+    <!-- ======Testimonials-Section-Start====== -->
+    <section class="testimonials-section py-5">
+      <div class="container h-100 d-flex flex-column justify-content-end">
+        <div class="testimonial-header mb-4">
+          <h2 class="fw-bold text-uppercase mb-2">What Our Customers Say</h2>
+          <p class="lead mb-0">
+            Real stories from people who loved our products and trusted our
+            brand.
+          </p>
+        </div>
+
+        <div class="row justify-content-start">
+          <div class="col-lg-6 col-md-10">
+            <div class="swiper testimonialSwiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <div class="testimonial-card">
+                    <p class="testimonial-text">
+                      “This face cream completely changed my skincare routine.
+                      My skin feels smoother and brighter!”
+                    </p>
+                    <div class="testimonial-author">
+                      <img
+                        src="https://randomuser.me/api/portraits/women/44.jpg"
+                        alt="User"
+                      />
+                      <div>
+                        <h6>Priya Sharma</h6>
+                        <small>Delhi, India</small>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="swiper-slide">
+                  <div class="testimonial-card">
+                    <p class="testimonial-text">
+                      “Absolutely love this product! Great texture and amazing
+                      results within weeks.”
+                    </p>
+                    <div class="testimonial-author">
+                      <img
+                        src="https://randomuser.me/api/portraits/men/36.jpg"
+                        alt="User"
+                      />
+                      <div>
+                        <h6>Rohit Patel</h6>
+                        <small>Mumbai, India</small>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="swiper-slide">
+                  <div class="testimonial-card">
+                    <p class="testimonial-text">
+                      “Best skincare investment I’ve made. I highly recommend it
+                      to everyone.”
+                    </p>
+                    <div class="testimonial-author">
+                      <img
+                        src="https://randomuser.me/api/portraits/women/65.jpg"
+                        alt="User"
+                      />
+                      <div>
+                        <h6>Ananya Verma</h6>
+                        <small>Bangalore, India</small>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="swiper-pagination"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ======Testimonials-Section-End====== -->
+    <!-- ======Blog-Section-Start====== -->
+    <section class="Blog-Section p-100 bg-light">
+      <div class="container">
+        <div class="text-center mb-5">
+          <h2 class="fw-bold text-uppercase mb-2">Our Latest Blogs</h2>
+          <p class="text-muted mb-0">
+            Discover skincare tips, trends, and product secrets from our
+            experts.
+          </p>
+        </div>
+
+        <div class="swiper blogSwiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="card blog-card border-0 h-100 shadow-sm">
+                <div class="blog-img position-relative">
+                  <img
+                    src="assets/images/b-1.webp"
+                    class="card-img-top"
+                    alt="Fine And Smooth Organic Face Pack"
+                  />
+                  <div
+                    class="blog-date position-absolute py-2 px-2 bg-dark text-white fw-bold"
+                    style="writing-mode: vertical-lr"
+                  >
+                    2023.26
+                  </div>
+                </div>
+                <div class="card-body text-end pb-0">
+                  <div class="blog-cat d-flex justify-content-end gap-2 mb-2">
+                    <span class="text-uppercase small"
+                      >Combination <i class="fas fa-bookmark text-muted"></i
+                    ></span>
+                    <span>-</span>
+                    <span class="text-uppercase small"
+                      >Dark Spots <i class="fas fa-bookmark text-muted"></i
+                    ></span>
+                  </div>
+                  <h4 class="card-title fw-bold mb-3">Organic Face Pack</h4>
+                  <p class="card-text mb-2 text-muted">
+                    Dempor nec feugiat nisl pretium fusce id. Nibh tellus ...
+                    molestie nunc non blandit
+                  </p>
+                  <a
+                    href="#"
+                    class="read-more-link d-inline-block mt-2 mb-3 fw-semibold"
+                    >READ MORE</a
+                  >
+                </div>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="card blog-card border-0 h-100 shadow-sm">
+                <div class="blog-img position-relative">
+                  <img
+                    src="assets/images/b-1.webp"
+                    class="card-img-top"
+                    alt="Refreshing Natural Mask"
+                  />
+                  <div
+                    class="blog-date position-absolute py-2 px-2 bg-dark text-white fw-bold"
+                    style="writing-mode: vertical-lr"
+                  >
+                    2023.18
+                  </div>
+                </div>
+                <div class="card-body text-end pb-0">
+                  <div class="blog-cat d-flex justify-content-end gap-2 mb-2">
+                    <span class="text-uppercase small"
+                      >Oily Skin <i class="fas fa-bookmark text-muted"></i
+                    ></span>
+                    <span>-</span>
+                    <span class="text-uppercase small"
+                      >Natural <i class="fas fa-bookmark text-muted"></i
+                    ></span>
+                  </div>
+                  <h4 class="card-title fw-bold mb-3">
+                    Refreshing Natural Mask
+                  </h4>
+                  <p class="card-text mb-2 text-muted">
+                    Improve your daily routine with 100% organic ingredients
+                    that soothe your skin.
+                  </p>
+                  <a
+                    href="#"
+                    class="read-more-link d-inline-block mt-2 mb-3 fw-semibold"
+                    >READ MORE</a
+                  >
+                </div>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="card blog-card border-0 h-100 shadow-sm">
+                <div class="blog-img position-relative">
+                  <img
+                    src="assets/images/b-1.webp"
+                    class="card-img-top"
+                    alt="Herbal Glow Formula"
+                  />
+                  <div
+                    class="blog-date position-absolute py-2 px-2 bg-dark text-white fw-bold"
+                    style="writing-mode: vertical-lr"
+                  >
+                    2023.10
+                  </div>
+                </div>
+                <div class="card-body text-end pb-0">
+                  <div class="blog-cat d-flex justify-content-end gap-2 mb-2">
+                    <span class="text-uppercase small"
+                      >Dry Skin <i class="fas fa-bookmark text-muted"></i
+                    ></span>
+                    <span>-</span>
+                    <span class="text-uppercase small"
+                      >Glow <i class="fas fa-bookmark text-muted"></i
+                    ></span>
+                  </div>
+                  <h4 class="card-title fw-bold mb-3">Herbal Glow Formula</h4>
+                  <p class="card-text mb-2 text-muted">
+                    A perfect herbal blend that brightens your skin and brings
+                    out your natural glow.
+                  </p>
+                  <a
+                    href="#"
+                    class="read-more-link d-inline-block mt-2 mb-3 fw-semibold"
+                    >READ MORE</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="card blog-card border-0 h-100 shadow-sm">
+                <div class="blog-img position-relative">
+                  <img
+                    src="assets/images/b-1.webp"
+                    class="card-img-top"
+                    alt="Herbal Glow Formula"
+                  />
+                  <div
+                    class="blog-date position-absolute py-2 px-2 bg-dark text-white fw-bold"
+                    style="writing-mode: vertical-lr"
+                  >
+                    2023.10
+                  </div>
+                </div>
+                <div class="card-body text-end pb-0">
+                  <div class="blog-cat d-flex justify-content-end gap-2 mb-2">
+                    <span class="text-uppercase small"
+                      >Dry Skin <i class="fas fa-bookmark text-muted"></i
+                    ></span>
+                    <span>-</span>
+                    <span class="text-uppercase small"
+                      >Glow <i class="fas fa-bookmark text-muted"></i
+                    ></span>
+                  </div>
+                  <h4 class="card-title fw-bold mb-3">Herbal Glow Formula</h4>
+                  <p class="card-text mb-2 text-muted">
+                    A perfect herbal blend that brightens your skin and brings
+                    out your natural glow.
+                  </p>
+                  <a
+                    href="#"
+                    class="read-more-link d-inline-block mt-2 mb-3 fw-semibold"
+                    >READ MORE</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======Blog-Section-End====== -->
+    <!-- ======Banner-Section-Start====== -->
+    <section>
+      <div class="">
+        <div>
+          <img src="assets/images/h-2.png" width="100%" alt="" />
+        </div>
+      </div>
+    </section>
+    <!-- ======Banner-Section-End====== -->
+    <!-- ======Footer-Section-Start====== -->
+    <footer class="Footer-Section pt-5 bg-white">
+      <div class="container">
+        <div class="row mt-4">
+          <div class="col-lg-4 mb-4 mb-lg-0 text-center text-lg-start">
+            <div class=" footer-logo">
+              <img src="assets/images/log.png" alt="">
+              
+            </div>
+            <div class="mb-2">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolore, ipsa.</div>
+            <div class="mb-2">Call Us: +91</div>
+            <div class="mb-3">Email:sale@gmail.com</div>
+            <div class="">
+              <strong>OUR SOCIAL LINKS:</strong>
+              <div
+                class="d-flex justify-content-lg-start justify-content-center gap-2 mt-2"
+              >
+                <a href="#" class="btn btn-light p-3"
+                  ><i class="fab fa-facebook-f"></i
+                ></a>
+                <a href="#" class="btn btn-light p-3"
+                  ><i class="fab fa-pinterest-p"></i
+                ></a>
+                <a href="#" class="btn btn-light p-3"
+                  ><i class="fab fa-instagram"></i
+                ></a>
+                <a href="#" class="btn btn-light p-3"
+                  ><i class="fab fa-youtube"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-8">
+            <div class="row text-center mb-4">
+              <div
+                class="col-md-4 mb-3 mb-md-0 d-flex flex-row align-items-center"
+              >
+                <div class="me-3">
+                  <i
+                    class="fas fa-shipping-fast fa-2x"
+                    style="color: #bd9476"
+                  ></i>
+                </div>
+                <div>
+                  <span class="fw-bold">FREE SHIPPING.</span>
+                  <div class="small text-muted">No one rejects, dislikes.</div>
+                </div>
+              </div>
+              <div
+                class="col-md-4 mb-3 mb-md-0 d-flex flex-row align-items-center"
+              >
+                <div class="me-3">
+                  <i class="fas fa-headset fa-2x" style="color: #bd9476"></i>
+                </div>
+                <div>
+                  <span class="fw-bold">24/7 SUPPORT.</span>
+                  <div class="small text-muted">It has survived not only.</div>
+                </div>
+              </div>
+              <div class="col-md-4 d-flex flex-row align-items-center">
+                <div class="me-3">
+                  <i
+                    class="fas fa-shopping-bag fa-2x"
+                    style="color: #bd9476"
+                  ></i>
+                </div>
+                <div>
+                  <span class="fw-bold">ONLINE PAYMENT.</span>
+                  <div class="small text-muted">All the Lorem Ipsum on.</div>
+                </div>
+              </div>
+            </div>
+            <hr />
+            <div class="row">
+              <div class="col-lg-4 col-6 mb-4 mb-lg-0">
+                <h5 class="fw-bold mb-3">CATEGORIES</h5>
+                <ul class="list-unstyled text-muted">
+                  <li>Body Products</li>
+                  <li>Skincare Sets</li>
+                  <li>Eyes Products</li>
+                  <li>Hair Products</li>
+                </ul>
+              </div>
+              <div class="col-lg-4 col-6">
+                <h5 class="fw-bold mb-3">Products</h5>
+                <ul class="list-unstyled text-muted">
+                  <li>Facewash</li>
+                  <li>Cleanser</li>
+                  <li>Toner</li>
+                  <li>Body Wash</li>
+                </ul>
+              </div>
+              <div class="col-lg-4 mb-4 mb-lg-0">
+                <h5 class="fw-bold mb-3">INFORMATION</h5>
+                <ul class="list-unstyled text-muted">
+                  <li>Shipping & Return</li>
+                  <li>Privacy Policy</li>
+                  <li>Giving Back</li>
+                  <li>Sustainability</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+          <div class=" bg-dark text-white">
+            <p class="small p-2">© Cosmacube. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- ======Footer-Section-End====== -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script src="./assets/JS/main.js"></script>
+
+    <style>
+      @keyframes bounce {
+        0%,
+        20%,
+        50%,
+        80%,
+        100% {
+          transform: translateY(0);
+        }
+        40% {
+          transform: translateY(-20px);
+        }
+        60% {
+          transform: translateY(-10px);
+        }
+      }
+    </style>
+  </body>
+</html>
