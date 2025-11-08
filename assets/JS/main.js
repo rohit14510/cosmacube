@@ -237,7 +237,24 @@
       },
     },
   });
-
+  document.addEventListener("DOMContentLoaded", function () {
+    new Swiper(".BannerSwiper", {
+      loop: true,
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      speed: 600,
+    });
+  });
  
   const buttons = document.querySelectorAll('.category-btn');
   const bodySection = document.getElementById('bodySection');
