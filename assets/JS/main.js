@@ -285,4 +285,22 @@
   // Default: All products visible
   skinSection.style.display = 'flex';
   bodySection.style.display = 'flex';
+//product image gallery
+ let currentIndex = 0;
 
+    function changeImage(el, index) {
+      document.querySelectorAll('.thumbnails img').forEach(img => img.classList.remove('active'));
+      el.classList.add('active');
+
+      const mainImg = document.getElementById('mainImg');
+      mainImg.src = el.src;
+
+      // Update spotlight main link
+      const mainLink = mainImg.parentElement;
+      const spotlightLinks = document.querySelectorAll('#spotlightGallery a');
+      mainLink.href = spotlightLinks[index].href;
+
+      currentIndex = index;
+    }
+
+    

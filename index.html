@@ -43,16 +43,40 @@
       <ul class="main-nav">
          <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
                  <li class="nav-item"><a href="#" class="nav-link">About</a></li>
-        <!-- PRODUCTS DROPDOWN -->
-        <li class="nav-item dropdown">
-           <a href="#" class="nav-link dropdown-toggle">
-            Products <i class="fas fa-chevron-down arrow-icon"></i>
-          </a>
-          <ul class="dropdown-menu">
-            <li><a href="#" class="dropdown-item" data-category="body-care">Body Care</a></li>
-            <li><a href="#" class="dropdown-item" data-category="face-care">Face Care</a></li>
-          </ul>
-        </li>
+     <!-- PRODUCTS DROPDOWN -->
+      <li class="nav-item dropdown position-static products-dropdown">
+        <a href="#" class="nav-link dropdown-toggle">
+          Products <i class="fas fa-chevron-down ms-1"></i>
+        </a>
+
+        <div class="dropdown-menu container-fluid products-mega-dropdown ">
+          <div class="row text-start">
+
+           <div class="col-lg-4">
+             <a href="#" class="dropdown-card text-decoration-none text-dark">
+              <img src="assets/images/d-1.jpg" alt="Body Care">
+              <div>
+                <h6>Body Care</h6>
+                <p>Nourish & protect your skin with 100% natural care.</p>
+                <button class="btn btn-outline-primary explore-btn btn-sm" data-target="bodyCareDropdown">Explore</button>
+              </div>
+            </a>
+           </div>
+
+            <div class="col-lg-4">
+              <a href="#" class="dropdown-card text-decoration-none text-dark">
+              <img src="assets/images/d-1.jpg" alt="Face Care">
+              <div>
+                <h6>Face Care</h6>
+                <p>Glow naturally with pure, gentle, and safe ingredients.</p>
+                <button class="btn btn-outline-primary explore-btn btn-sm" data-target="faceCareDropdown">Explore</button>
+              </div>
+            </a>
+            </div>
+
+          </div>
+        </div>
+      </li>
 
 
        
@@ -305,7 +329,6 @@
       </div>
     </nav>
 
-    <!-- Demo Content -->
     <!-- ======Hero-Section-Start====== -->
     <section>
       <div class="container-fluid p-0">
@@ -1120,52 +1143,55 @@
 
     <script src="./assets/JS/main.js"></script>
 <!-- JS for Dropdown Toggle -->
-<script>
-  const bodyDropdown = document.getElementById("bodyCareDropdown");
-  const faceDropdown = document.getElementById("faceCareDropdown");
+<script>  const exploreBtns = document.querySelectorAll('.explore-btn');
+    const dropdowns = document.querySelectorAll('.mega-dropdown');
 
-  // Category dropdown open/toggle
-  document.querySelectorAll(".dropdown-item[data-category]").forEach((item) => {
-    item.addEventListener("click", (e) => {
-      e.preventDefault();
-      const category = e.target.getAttribute("data-category");
+    exploreBtns.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const targetId = btn.getAttribute('data-target');
 
-      // Hide both first
-      bodyDropdown.style.display = "none";
-      faceDropdown.style.display = "none";
+        dropdowns.forEach(drop => {
+          drop.id === targetId ? drop.classList.toggle('active') : drop.classList.remove('active');
+        });
+      });
+    });
 
-      // Show respective section
-      if (category === "body-care") {
-        bodyDropdown.style.display = "block";
-      } else if (category === "face-care") {
-        faceDropdown.style.display = "block";
+    // Close when clicking outside
+    document.addEventListener('click', (e) => {
+      if (![...dropdowns].some(d => d.contains(e.target)) && !e.target.classList.contains('explore-btn')) {
+        dropdowns.forEach(drop => drop.classList.remove('active'));
       }
+    });
+  </script>
+<script>
+document.querySelectorAll('.products-dropdown').forEach(dropdown => {
+  let timer;
+  const megaMenu = dropdown.querySelector('.products-mega-dropdown');
 
-      // Stop click event from bubbling up
-      e.stopPropagation();
+  // When mouse enters the Products item
+  dropdown.addEventListener('mouseenter', () => {
+    clearTimeout(timer);
+    megaMenu.style.display = 'block';
+    requestAnimationFrame(() => {
+      megaMenu.style.opacity = '1';
+      megaMenu.style.transform = 'translateY(0)';
+      megaMenu.style.pointerEvents = 'auto';
     });
   });
 
-  // Hide dropdowns when clicking outside header or dropdown
-  document.addEventListener("click", (e) => {
-    const isInsideHeader = e.target.closest(".main-header");
-    const isInsideDropdown = e.target.closest(".mega-dropdown");
-
-    // agar click header ke kisi nav-link par hua hai to kuch mat karo
-    if (
-      isInsideHeader &&
-      (e.target.classList.contains("nav-link") ||
-        e.target.closest(".nav-link"))
-    ) {
-      return;
-    }
-
-    // agar click header ke kisi aur jagah ya bahar hua hai
-    if (!isInsideHeader && !isInsideDropdown) {
-      bodyDropdown.style.display = "none";
-      faceDropdown.style.display = "none";
-    }
+  // When mouse leaves the Products item or its mega menu
+  dropdown.addEventListener('mouseleave', () => {
+    timer = setTimeout(() => {
+      megaMenu.style.opacity = '0';
+      megaMenu.style.transform = 'translateY(10px)';
+      megaMenu.style.pointerEvents = 'none';
+      setTimeout(() => {
+        megaMenu.style.display = 'none';
+      }, 250); // matches CSS transition time
+    }, 300); // <-- delay before closing (adjust as you like)
   });
+});
 </script>
 
     <style>
