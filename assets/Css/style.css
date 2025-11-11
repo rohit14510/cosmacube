@@ -883,7 +883,8 @@ a {
 
 .All-Product-Section .btn-group .btn.active,
 .All-Product-Section .btn-group .btn:hover {
-  background: #ecdec1;
+  background: #b67e53;
+  color: #fff;
 }
 
 .product-card {
@@ -929,10 +930,10 @@ a {
   font-size: 1rem;
   border-radius: 0;
   border: 1px solid #f2e6c6;
-  background: linear-gradient(to right, #000 50%, #ecdec1 50%);
+  background: linear-gradient(to right, #000 50%, #b67e53 50%);
   background-size: 250% 100%;
   background-position: right bottom;
-  color: #000;
+  color: #fff;
   padding: 0.8rem 2.2rem;
   transition: all 0.6s ease;
   text-transform: uppercase;
@@ -1183,6 +1184,22 @@ font-size: .6rem;
   }
 }
 /* Testimonials-section-End */
+.BannerSwiper{
+  height: 400px;
+}
+.BannerSwiper img{
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+@media (max-width: 768px) {
+  .BannerSwiper{
+    height: 250px;
+  }
+  .BannerSwiper img{
+    height: 250px;
+  }
+}
 /* Footer-section-Start */
 .Footer-Section {
   background: #fff;
@@ -1235,6 +1252,9 @@ font-size: .6rem;
 .banner-section h1,
 .banner-section .breadcrumb {
   text-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+.breadcrumb-item+.breadcrumb-item::before {
+    color: #fff !important;
 }
     .product-details-section {
       background: #fff;
@@ -1323,7 +1343,7 @@ font-size: .6rem;
       font-size: 1rem;
       border-radius: 0;
       border: 1px solid #f2e6c6;
-      background: linear-gradient(to right, #ecdec1 50%, #000 50%);
+      background: linear-gradient(to right, #b67e53 50%, #000 50%);
       background-size: 250% 100%;
       background-position: right bottom;
       color: #fff;
@@ -1335,7 +1355,7 @@ font-size: .6rem;
     }
 .product-cart-button:hover {
       background-position: left bottom;
-      color: #000;
+      color: #fff;
       border-color: #f2e6c6;
     }
         .heart-btn i{
@@ -1350,3 +1370,80 @@ font-size: .6rem;
       border-color: #dc3545 !important;
     }
 /* Product-Details-section-End */
+/* Cart-Popup-section-Start */
+.cart-popup-action{
+  border: 1px solid #ddd;
+}
+.cart-popup-action:hover{
+  border: 1px solid #000;
+  background-color: #000;
+  color: #fff;
+}
+.cart-modal .cart-modal-dialog {
+  margin: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  height: 100vh;
+  transform: translateX(100%) !important; 
+  transition: transform 0.4s ease;
+}
+
+
+.cart-modal.show .cart-modal-dialog {
+  transform: translateX(0) !important;
+}
+
+
+.cart-modal ~ .modal-backdrop.show {
+  opacity: 0.4;
+}
+
+/* Cart-Popup-section-End */
+/* Cart-Pages-Start */
+.Cart-Section .input-group .form-control {
+  min-width: 40px;
+  max-width: 40px;
+  padding-left: 0;
+  padding-right: 0;
+}
+.Cart-Section a {
+  font-size: 1rem;
+}
+@media (max-width: 767.98px) {
+  .Cart-Section .row.bg-light {
+    display: none;
+  }
+  .Cart-Section .row.align-items-center {
+    font-size: 0.96rem;
+  }
+}
+.Cart-Right-Section {
+  background: #F2F3F0;
+  padding: 2rem 1.5rem;
+  max-width: 400px;
+}
+.Cart-Right-Section input::placeholder {
+  color: #A5A4A4;
+  font-size: 1.13rem;
+}
+.Cart-Right-Section h3, .Cart-Right-Section h5 {
+  font-family: 'Poppins', sans-serif;
+}
+.Cart-Right-Section .table td {
+  border: none;
+  font-size: 1.09rem;
+  padding: 0.63rem 0.3rem;
+}
+.Cart-Right-Section .input-group .btn {
+  min-width: 100px;
+}
+@media (max-width: 767px) {
+  .Cart-Right-Section {
+    padding: 1.5rem 1rem;
+    max-width: 100%;
+  }
+  .Cart-Right-Section .table td { font-size: 1rem; }
+}
+
+/* Cart-Pages-End */

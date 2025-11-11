@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="hi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cosmacube</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="./assets/Css/style.css" />
+  </head>
+  <body>
+    <!-- Announcement Bar -->
+    <div class="announcement-bar">
+      Buy 3 @₹1099 + 3 Free Gifts
+      <button
+        class="announcement-close"
+        onclick="this.parentElement.style.display='none'"
+      >
+        ×
+      </button>
+    </div>
+
+    <!-- Desktop Header -->
+<header class="main-header">
+  <div class="container-fluid">
+    <!-- Logo -->
+    <a href="#" class="brand-logo">
+      <img src="assets/images/log.png" class="log-image" alt="Logo" />
+    </a>
+
+    <!-- Navigation -->
+    <nav>
+      <ul class="main-nav">
+         <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
+                 <li class="nav-item"><a href="#" class="nav-link">About</a></li>
+        <!-- PRODUCTS DROPDOWN -->
+        <li class="nav-item dropdown">
+           <a href="#" class="nav-link dropdown-toggle">
+            Products <i class="fas fa-chevron-down arrow-icon"></i>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a href="#" class="dropdown-item" data-category="body-care">Body Care</a></li>
+            <li><a href="#" class="dropdown-item" data-category="face-care">Face Care</a></li>
+          </ul>
+        </li>
+
+
+       
+        <li class="nav-item"><a href="#" class="nav-link">Contacts</a></li>
+      </ul>
+    </nav>
+
+    <!-- Search Bar -->
+    <div class="search-wrapper">
+      <input
+        type="text"
+        class="search-input"
+        placeholder="Search for products..."
+        id="desktopSearch"
+      />
+      <i class="fas fa-search search-icon"></i>
+      <div class="search-results" id="desktopSearchResults"></div>
+    </div>
+
+    <!-- Header Actions -->
+    <div class="header-actions">
+      <button class="action-btn">
+        <i class="fas fa-heart"></i>
+        <span class="badge-indicator">3</span>
+      </button>
+      <button class="action-btn">
+        <i class="fas fa-user"></i>
+      </button>
+      <button class="action-btn">
+        <i class="fas fa-shopping-bag"></i>
+        <span class="badge-indicator">2</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- Body Care Mega Dropdown -->
+<div class="mega-dropdown" id="bodyCareDropdown">
+  <div class="dropdown-content">
+    <div class="category-grid">
+      <div class="category-card" data-product="body-lotion">
+        <img src="https://images.unsplash.com/photo-1556228720-195a672e8a03?w=400" alt="Body Lotion" />
+        <div class="category-name">Body Lotion</div>
+      </div>
+      <div class="category-card" data-product="body-wash">
+        <img src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=400" alt="Body Wash" />
+        <div class="category-name">Body Wash</div>
+      </div>
+      <div class="category-card" data-product="body-scrub">
+        <img src="https://images.unsplash.com/photo-1591360236480-4ed861025fa1?w=400" alt="Body Scrub" />
+        <div class="category-name">Body Scrub</div>
+      </div>
+      <div class="category-card" data-product="body-oil">
+        <img src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=400" alt="Body Oil" />
+        <div class="category-name">Body Oil</div>
+      </div>
+      <div class="category-card" data-product="hand-cream">
+        <img src="https://images.unsplash.com/photo-1612817288484-6f916006741a?w=400" alt="Hand Cream" />
+        <div class="category-name">Hand Cream</div>
+      </div>
+      <div class="category-card" data-product="sunscreen">
+        <img src="https://images.unsplash.com/photo-1571875257727-256c39da42af?w=400" alt="Sunscreen" />
+        <div class="category-name">Sunscreen</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Face Care Mega Dropdown -->
+<div class="mega-dropdown" id="faceCareDropdown">
+  <div class="dropdown-content">
+    <div class="category-grid">
+      <div class="category-card" data-product="cleanser">
+        <img src="https://images.unsplash.com/photo-1556228578-0d85b1a4d571?w=400" alt="Cleanser" />
+        <div class="category-name">Cleanser</div>
+      </div>
+      <div class="category-card" data-product="serum">
+        <img src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=400" alt="Serum" />
+        <div class="category-name">Serum</div>
+      </div>
+      <div class="category-card" data-product="face-mask">
+        <img src="https://images.unsplash.com/photo-1570554886111-e80fcca6a029?w=400" alt="Face Mask" />
+        <div class="category-name">Face Mask</div>
+      </div>
+      <div class="category-card" data-product="moisturizer">
+        <img src="https://images.unsplash.com/photo-1556228852-80a0e536a555?w=400" alt="Moisturizer" />
+        <div class="category-name">Moisturizer</div>
+      </div>
+      <div class="category-card" data-product="toner">
+        <img src="https://images.unsplash.com/photo-1617897903246-719242758050?w=400" alt="Toner" />
+        <div class="category-name">Toner</div>
+      </div>
+      <div class="category-card" data-product="eye-cream">
+        <img src="https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?w=400" alt="Eye Cream" />
+        <div class="category-name">Eye Cream</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <!-- Mobile Header -->
+    <header class="mobile-header">
+      <div class="mobile-header-inner">
+        <button class="mobile-menu-btn" id="mobileMenuBtn">
+          <i class="fas fa-bars"></i>
+        </button>
+        <a href="#" class="mobile-logo text-center"><img src="assets/images/log.png" alt=""></a>
+        <button class="mobile-search-btn" id="mobileSearchBtn">
+          <i class="fas fa-search"></i>
+        </button>
+      </div>
+    </header>
+
+    <!-- Mobile Sidebar -->
+  <div class="mobile-sidebar" id="mobileSidebar">
+  <div class="sidebar-header">
+    <h5>Menu</h5>
+    <button class="sidebar-close-btn" id="sidebarClose">×</button>
+  </div>
+
+  <div class="sidebar-menu">
+
+    <!-- 🔹 Static Links -->
+    <div class="sidebar-link">
+      <a href="#"><i class="fas fa-home me-2"></i> Home</a>
+    </div>
+    <div class="sidebar-link">
+      <a href="#"><i class="fas fa-info-circle me-2"></i> About</a>
+    </div>
+    <div class="sidebar-link">
+      <a href="#"><i class="fas fa-envelope me-2"></i> Contacts</a>
+    </div>
+
+
+    <!-- 🔹 Body Care Category -->
+    <div class="sidebar-category">
+      <div class="category-header" data-toggle="bodyCareSubmenu">
+        <span><i class="fas fa-spa me-2"></i> Body Care</span>
+        <i class="fas fa-chevron-down"></i>
+      </div>
+      <div class="category-submenu" id="bodyCareSubmenu">
+        <div class="submenu-item" data-product="body-lotion">
+          <img src="https://images.unsplash.com/photo-1556228720-195a672e8a03?w=100" alt="" />
+          <span>Body Lotion</span>
+        </div>
+        <div class="submenu-item" data-product="body-wash">
+          <img src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=100" alt="" />
+          <span>Body Wash</span>
+        </div>
+        <div class="submenu-item" data-product="body-scrub">
+          <img src="https://images.unsplash.com/photo-1591360236480-4ed861025fa1?w=100" alt="" />
+          <span>Body Scrub</span>
+        </div>
+        <div class="submenu-item" data-product="body-oil">
+          <img src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=100" alt="" />
+          <span>Body Oil</span>
+        </div>
+        <div class="submenu-item" data-product="hand-cream">
+          <img src="https://images.unsplash.com/photo-1612817288484-6f916006741a?w=100" alt="" />
+          <span>Hand Cream</span>
+        </div>
+        <div class="submenu-item" data-product="sunscreen">
+          <img src="https://images.unsplash.com/photo-1571875257727-256c39da42af?w=100" alt="" />
+          <span>Sunscreen</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 🔹 Face Care Category -->
+    <div class="sidebar-category">
+      <div class="category-header" data-toggle="faceCareSubmenu">
+        <span><i class="fas fa-smile me-2"></i> Face Care</span>
+        <i class="fas fa-chevron-down"></i>
+      </div>
+      <div class="category-submenu" id="faceCareSubmenu">
+        <div class="submenu-item" data-product="cleanser">
+          <img src="https://images.unsplash.com/photo-1556228578-0d85b1a4d571?w=100" alt="" />
+          <span>Cleanser</span>
+        </div>
+        <div class="submenu-item" data-product="serum">
+          <img src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=100" alt="" />
+          <span>Serum</span>
+        </div>
+        <div class="submenu-item" data-product="face-mask">
+          <img src="https://images.unsplash.com/photo-1570554886111-e80fcca6a029?w=100" alt="" />
+          <span>Face Mask</span>
+        </div>
+        <div class="submenu-item" data-product="moisturizer">
+          <img src="https://images.unsplash.com/photo-1556228852-80a0e536a555?w=100" alt="" />
+          <span>Moisturizer</span>
+        </div>
+        <div class="submenu-item" data-product="toner">
+          <img src="https://images.unsplash.com/photo-1617897903246-719242758050?w=100" alt="" />
+          <span>Toner</span>
+        </div>
+        <div class="submenu-item" data-product="eye-cream">
+          <img src="https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?w=100" alt="" />
+          <span>Eye Cream</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    <!-- Mobile Search Modal -->
+    <div class="search-modal" id="searchModal">
+      <div class="search-modal-header">
+        <button class="search-modal-back" id="searchModalClose">
+          <i class="fas fa-arrow-left"></i>
+        </button>
+        <input
+          type="text"
+          class="search-modal-input"
+          placeholder="Search products..."
+          id="mobileSearch"
+        />
+      </div>
+      <div class="search-modal-results" id="mobileSearchResults"></div>
+    </div>
+
+    <!-- Page Overlay -->
+    <div class="page-overlay" id="pageOverlay"></div>
+
+    <!-- Mobile Bottom Navigation -->
+    <nav class="mobile-bottom-nav">
+      <div class="bottom-nav-items">
+        <a href="#" class="nav-item-btn active">
+          <i class="fas fa-home"></i>
+          <span>Home</span>
+        </a>
+        <a href="#" class="nav-item-btn">
+          <i class="fas fa-spa"></i>
+          <span>Shop</span>
+        </a>
+        <a href="#" class="nav-item-btn">
+          <i class="fas fa-shopping-cart"></i>
+          <span>Cart</span>
+          <span class="badge-indicator">2</span>
+        </a>
+        <a href="#" class="nav-item-btn">
+          <i class="fas fa-heart"></i>
+          <span>Wishlist</span>
+          <span class="badge-indicator">3</span>
+        </a>
+        <a href="#" class="nav-item-btn">
+          <i class="fas fa-user"></i>
+          <span>Account</span>
+        </a>
+      </div>
+    </nav>
+
+
+  <!-- ======Banner-Section-Start====== -->
+   <section class="banner-section position-relative d-flex align-items-center justify-content-start" style="height: 250px;">
+  <!-- Background image -->
+  <div class="banner-bg position-absolute w-100 h-100 top-0 start-0" style="z-index: 1;">
+    <img src="assets/images/banner" class="img-fluid w-100 h-100 object-fit-cover" alt="Banner" style="opacity:0.85;">
+  </div>
+  <!-- Banner text content -->
+  <div class="container position-relative z-2">
+    <h1 class="display-4 text-white fw-bold mb-3">DEMAQUILLANT WATERPROOF</h1>
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <a href="#" class="text-white"><i class="bi bi-house-door"></i> SHOP</a>
+        </li>
+        <li class="breadcrumb-item">
+          <a href="#" class="text-white">FACE PRODUCTS</a>
+        </li>
+      </ol>
+    </nav>
+  </div>
+</section>
+
+     <!-- ======Banner-Section-End====== -->
+        <!-- ======Product-Section-Start====== -->
+          <section class="product-details-section">
+    <div class="row g-4 align-items-start">
+      <!-- LEFT SIDE -->
+      <div class="col-md-6 ">
+        <div class="d-flex flex-column flex-md-column gap-4">
+          <!-- Main Image -->
+          <div class="main-image">
+            <a href="assets/images/pr-1.jpg" class="spotlight" data-spotlight="product-gallery">
+              <img id="mainImg" src="assets/images/pr-1.jpg" width="100%" alt="Product Image" />
+            </a>
+          </div>
+                  <!-- Thumbnails -->
+          <div class="thumbnails d-flex flex-md-row justify-content-center gap-2 me-md-3">
+            <img src="assets/images/pr-1.jpg" onclick="changeImage(this, 0)" class="active" />
+            <img src="assets/images/pr-2.jpg" onclick="changeImage(this, 1)" />
+            <img src="assets/images/pr-3.jpg" onclick="changeImage(this, 2)" />
+            <img src="assets/images/pr-4.jpg" onclick="changeImage(this, 3)" />
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT SIDE -->
+      <div class="col-md-6">
+        <h2 class="product-title">Organic Aloe Vera Gel</h2>
+       <p class="price">
+                      <span class="old-price">₹800.00</span>
+                      <span class="new-price">₹499.00</span>
+                    </p>
+        <p class="product-description">
+          Our Organic Aloe Vera Gel is made from 100% pure and natural aloe vera extract. 
+          It soothes, hydrates, and rejuvenates your skin, leaving it soft and glowing.
+        </p>
+
+  <ul class="benefits list-unstyled">
+  <li><i class="bi bi-check-circle-fill text-success me-2"></i>100% natural and chemical-free</li>
+  <li><i class="bi bi-check-circle-fill text-success me-2"></i>Deeply moisturizes dry skin</li>
+  <li><i class="bi bi-check-circle-fill text-success me-2"></i>Reduces acne and dark spots</li>
+  <li><i class="bi bi-check-circle-fill text-success me-2"></i>Soothes sunburn instantly</li>
+</ul>
+
+       <!-- Product Details Buy Now Section Start -->
+<div class="border p-4 mb-4 ">
+ <!-- Product Details Action Start -->
+<div class="d-flex align-items-center gap-2">
+ <div class="border d-flex align-items-center justify-content-between px-2 py-0"
+     style="min-width:180px; min-height:62px;">
+  <button id="decrement" class="btn btn-link text-dark fs-3 text-decoration-none">−</button>
+  <span id="quantity" class="fw-normal fs-3 mx-2">1</span>
+  <button id="increment" class="btn btn-link text-dark fs-3 text-decoration-none">+</button>
+</div>
+  <button class="btn btn-dark fw-normal px-5 py-3 text-uppercase rounded-0 product-cart-button" style="min-width:240px; font-size:1.25rem;">
+    ADD TO CART
+  </button>
+  <button id="heartBtn" class="heart-btn border bg-white d-flex align-items-center justify-content-center rounded"
+          style="min-width:70px; min-height:62px;">
+    <i class="bi bi-heart-fill fs-3"></i>
+  </button>
+</div>
+<!-- Product Details Action End -->
+
+ 
+
+</div>
+  <div class="product-meta mt-4">
+    <div class="mb-2">
+      <span class="fw-bold text-uppercase small">SKU:</span>
+      <span class="text-muted ms-2">RETYN01-SPA-311</span>
+    </div>
+    <div class="mb-2">
+      <span class="fw-bold text-uppercase small">Categories:</span>
+      <span class="text-muted ms-2">Face products</span>
+    </div>
+    <div class="mb-2">
+      <span class="fw-bold text-uppercase small">Tags:</span>
+      <span class="text-muted ms-2">
+        AHA, BHA, Meso, Peel, Skincare, Vitamin C, Vitamin E, Water-resistant
+      </span>
+    </div>
+    <div>
+      <span class="fw-bold text-uppercase small">Brand:</span>
+      <span class="text-muted ms-2">Aurora Skin</span>
+    </div>
+  </div>
+
+      </div>
+    </div>
+
+    <!-- Hidden Spotlight Gallery -->
+    <div id="spotlightGallery" style="display:none;">
+      <a href="assets/images/pr-1.jpg" class="spotlight" data-spotlight="product-gallery"></a>
+      <a href="assets/images/pr-2.jpg" class="spotlight" data-spotlight="product-gallery"></a>
+      <a href="assets/images/pr-3.jpg" class="spotlight" data-spotlight="product-gallery"></a>
+      <a href="assets/images/pr-4.jpg" class="spotlight" data-spotlight="product-gallery"></a>
+    </div>
+  </section>
+           <!-- ======Product-Section-End====== -->
+
+      <!-- ======Footer-Section-Start====== -->
+    <footer class="Footer-Section pt-5 bg-white">
+      <div class="container">
+        <div class="row mt-4">
+          <div class="col-lg-4 mb-4 mb-lg-0 text-center text-lg-start">
+            <div class=" footer-logo">
+              <img src="assets/images/log.png" alt="">
+              
+            </div>
+            <div class="mb-2">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolore, ipsa.</div>
+            <div class="mb-2">Call Us: +91</div>
+            <div class="mb-3">Email:sale@gmail.com</div>
+            <div class="">
+              <strong>OUR SOCIAL LINKS:</strong>
+              <div
+                class="d-flex justify-content-lg-start justify-content-center gap-2 mt-2"
+              >
+                <a href="#" class="btn btn-light p-3"
+                  ><i class="fab fa-facebook-f"></i
+                ></a>
+                <a href="#" class="btn btn-light p-3"
+                  ><i class="fab fa-pinterest-p"></i
+                ></a>
+                <a href="#" class="btn btn-light p-3"
+                  ><i class="fab fa-instagram"></i
+                ></a>
+                <a href="#" class="btn btn-light p-3"
+                  ><i class="fab fa-youtube"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-8">
+            <div class="row text-center mb-4">
+              <div
+                class="col-md-4 mb-3 mb-md-0 d-flex flex-row align-items-center"
+              >
+                <div class="me-3">
+                  <i
+                    class="fas fa-shipping-fast fa-2x"
+                    style="color: #bd9476"
+                  ></i>
+                </div>
+                <div>
+                  <span class="fw-bold">FREE SHIPPING.</span>
+                  <div class="small text-muted">No one rejects, dislikes.</div>
+                </div>
+              </div>
+              <div
+                class="col-md-4 mb-3 mb-md-0 d-flex flex-row align-items-center"
+              >
+                <div class="me-3">
+                  <i class="fas fa-headset fa-2x" style="color: #bd9476"></i>
+                </div>
+                <div>
+                  <span class="fw-bold">24/7 SUPPORT.</span>
+                  <div class="small text-muted">It has survived not only.</div>
+                </div>
+              </div>
+              <div class="col-md-4 d-flex flex-row align-items-center">
+                <div class="me-3">
+                  <i
+                    class="fas fa-shopping-bag fa-2x"
+                    style="color: #bd9476"
+                  ></i>
+                </div>
+                <div>
+                  <span class="fw-bold">ONLINE PAYMENT.</span>
+                  <div class="small text-muted">All the Lorem Ipsum on.</div>
+                </div>
+              </div>
+            </div>
+            <hr />
+            <div class="row text-center">
+              <div class="col-lg-4 col-6 mb-4 mb-lg-0">
+                <h5 class="fw-bold mb-3">CATEGORIES</h5>
+                <ul class="list-unstyled text-muted">
+                  <li>Body Products</li>
+                  <li>Skincare Sets</li>
+                  <li>Eyes Products</li>
+                  <li>Hair Products</li>
+                </ul>
+              </div>
+              <div class="col-lg-4 col-6">
+                <h5 class="fw-bold mb-3">Products</h5>
+                <ul class="list-unstyled text-muted">
+                  <li>Facewash</li>
+                  <li>Cleanser</li>
+                  <li>Toner</li>
+                  <li>Body Wash</li>
+                </ul>
+              </div>
+              <div class="col-lg-4 mb-4 mb-lg-0">
+                <h5 class="fw-bold mb-3">INFORMATION</h5>
+                <ul class="list-unstyled text-muted">
+                  <li>Shipping & Return</li>
+                  <li>Privacy Policy</li>
+                  <li>Giving Back</li>
+                  <li>Sustainability</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+          <div class=" bg-dark text-white">
+            <p class="small p-2 text-center">© Cosmacube. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- ======Footer-Section-End====== -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script src="./assets/JS/main.js"></script>
+     <script src="./assets/JS/spotlight.bundle.js"></script>
+      <script src="./assets/JS/spotlight.js"></script>
+<!-- JS for Dropdown Toggle -->
+<script>
+  const bodyDropdown = document.getElementById("bodyCareDropdown");
+  const faceDropdown = document.getElementById("faceCareDropdown");
+
+  // Category dropdown open/toggle
+  document.querySelectorAll(".dropdown-item[data-category]").forEach((item) => {
+    item.addEventListener("click", (e) => {
+      e.preventDefault();
+      const category = e.target.getAttribute("data-category");
+
+      // Hide both first
+      bodyDropdown.style.display = "none";
+      faceDropdown.style.display = "none";
+
+      // Show respective section
+      if (category === "body-care") {
+        bodyDropdown.style.display = "block";
+      } else if (category === "face-care") {
+        faceDropdown.style.display = "block";
+      }
+
+      // Stop click event from bubbling up
+      e.stopPropagation();
+    });
+  });
+
+  // Hide dropdowns when clicking outside header or dropdown
+  document.addEventListener("click", (e) => {
+    const isInsideHeader = e.target.closest(".main-header");
+    const isInsideDropdown = e.target.closest(".mega-dropdown");
+
+    // agar click header ke kisi nav-link par hua hai to kuch mat karo
+    if (
+      isInsideHeader &&
+      (e.target.classList.contains("nav-link") ||
+        e.target.closest(".nav-link"))
+    ) {
+      return;
+    }
+
+    // agar click header ke kisi aur jagah ya bahar hua hai
+    if (!isInsideHeader && !isInsideDropdown) {
+      bodyDropdown.style.display = "none";
+      faceDropdown.style.display = "none";
+    }
+  });
+
+   document.addEventListener('DOMContentLoaded', function () {
+      const quantityEl = document.getElementById('quantity');
+      const incrementBtn = document.getElementById('increment');
+      const decrementBtn = document.getElementById('decrement');
+      
+      let count = 1;
+      
+      incrementBtn.addEventListener('click', () => {
+        count++;
+        quantityEl.textContent = count;
+      });
+
+      decrementBtn.addEventListener('click', () => {
+        if (count > 1) {
+          count--;
+          quantityEl.textContent = count;
+        }
+      });
+    });
+</script>
+
+    <style>
+      @keyframes bounce {
+        0%,
+        20%,
+        50%,
+        80%,
+        100% {
+          transform: translateY(0);
+        }
+        40% {
+          transform: translateY(-20px);
+        }
+        60% {
+          transform: translateY(-10px);
+        }
+      }
+    </style>
+  </body>
+</html>
