@@ -71,7 +71,7 @@ a {
 /* Main Header - Desktop */
 .main-header {
   background: white;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+ 
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -811,7 +811,66 @@ a {
     transform: translateY(0);
   }
 }
+/* Hero-section-Start */
+.heroSwiper-Slider{
+  padding:10px 60px;
+}
+.heroSwiper-Slider img{
+  border-radius: 20px;
+}
+/* Custom Arrows */
+.heroSlider-next,
+.heroSlider-prev {
+  color: #000;
+  position: absolute;
+  top: 50%;
+  z-index: 10;
+  transform: translateY(-50%);
+}
+.heroSlider-prev::after{
+  font-size: 30px !important;
+}
+.heroSlider-next::after{
+  font-size: 30px !important;
+}
+/* Right arrow */
+.heroSlider-next {
+  right: 10px;
+}
 
+/* Left arrow */
+.heroSlider-prev {
+  left: 10px;
+}
+
+/* Custom Pagination */
+.heroSlider-pagination {
+  bottom: 10px !important;
+}
+
+/* Pagination Bullets */
+.heroSlider-pagination .swiper-pagination-bullet {
+  background: #0d6efd;
+  opacity: 0.7;
+}
+
+.heroSlider-pagination .swiper-pagination-bullet-active {
+  background: #fff;
+  opacity: 1;
+}
+@media (max-width: 768px) {
+  .heroSwiper-Slider{
+  padding:10px;
+}
+.heroSwiper-Slider img{
+  border-radius: 10px;
+}
+.heroSlider-next,
+.heroSlider-prev {
+ display: none;
+}
+}
+/* Hero-section-End */
 /* Category-section-Start */
 .cat-card-section {
   position: relative;
@@ -911,9 +970,7 @@ a {
   font-size: 1.1rem;
 }
 
-.price {
-  margin-bottom: 0.5rem;
-}
+
 .old-price {
   text-decoration: line-through;
   color: #999;
@@ -924,6 +981,16 @@ a {
   font-size: 1.05rem;
   font-weight: 700;
   color: #222;
+}
+.quantity-button{
+  background-color: #fffcf2 !important;
+  color: #666666 !important;
+  border: 1px solid #b67e53 !important;
+}
+.product-details-list{
+  font-size: 14px;
+  font-weight: 400;
+  padding: 14px;
 }
 .cart-button {
   font-weight: 700;
@@ -937,7 +1004,7 @@ a {
   padding: 0.8rem 2.2rem;
   transition: all 0.6s ease;
   text-transform: uppercase;
-  margin-top: 20px;
+  margin-top: 0px;
   position: relative;
   overflow: hidden;
 }
@@ -1023,14 +1090,14 @@ a {
   padding: 10px;
 }
 .cart-button {
-  font-size: .8rem;
-  padding:10px;
+  font-size: 1rem;
+  padding:14px;
   margin-top: 0px;
 }
 .product-card h5 {
   font-weight: 700;
   color: #222;
-  font-size: 1rem;
+  font-size: 1.5rem;
 }
 
 .product-card .price {
@@ -1043,10 +1110,19 @@ a {
     margin: 0px;
   color: #fdb827;
   margin-right: 1px;
-  font-size: .9rem;
+  font-size: 1rem;
 }
 .product-card .rating-count{
-font-size: .6rem;
+font-size: .8rem;
+}
+.product-details-list{
+  font-size: 16px;
+  font-weight: 400;
+  padding-left: 14px;
+}
+.product-img-wrapper img {
+  height: 300px;
+  object-fit: cover;
 }
 }
 /* All-Product-section-End */
@@ -1257,11 +1333,9 @@ font-size: .6rem;
     color: #fff !important;
 }
     .product-details-section {
-      background: #fff;
+      background: #f9fafc;
       border-radius: 16px;
       padding: 40px 30px;
-      margin: 40px auto;
-  
     }
 
     /* Thumbnails */
@@ -1271,6 +1345,7 @@ font-size: .6rem;
       object-fit: cover;
       border-radius: 8px;
       border: 2px solid #e0e0e0;
+      background-color: #fff;
       cursor: pointer;
       transition: 0.3s ease;
     }
@@ -1287,63 +1362,15 @@ font-size: .6rem;
       height: 400px;
       object-fit: contain;
       cursor: zoom-in;
+      background-color: #fff;
       border: 1px solid #e0e0e0;
-    }
-
-    /* Product Info */
-    .product-title {
-      font-size: 28px;
-      font-weight: 700;
-      margin-bottom: 15px;
-      color: #222;
-    }
-
-    .product-price {
-      font-size: 22px;
-      color: #0d6efd;
-      font-weight: 600;
-      margin-bottom: 15px;
-    }
-
-    .product-description {
-      font-size: 15px;
-      line-height: 1.6;
-      color: #555;
-      margin-bottom: 20px;
-    }
-
-    .benefits li {
-      margin-bottom: 8px;
-      color: #444;
-    }
-
-    .btn-buy {
-      background-color: #0d6efd;
-      color: #fff;
-      border-radius: 6px;
-      padding: 10px 20px;
-      border: none;
-    }
-
-    .btn-buy:hover {
-      background-color: #084298;
-    }
-
-    @media (max-width: 768px) {
-      .main-image img {
-        height: 320px;
-      }
-      .thumbnails {
-        flex-direction: row !important;
-        justify-content: center;
-      }
     }
     .product-cart-button{
       font-weight: 700;
       font-size: 1rem;
       border-radius: 0;
       border: 1px solid #f2e6c6;
-      background: linear-gradient(to right, #b67e53 50%, #000 50%);
+      background: linear-gradient(to right, #000 50%, #b67e53 50%);
       background-size: 250% 100%;
       background-position: right bottom;
       color: #fff;
@@ -1358,16 +1385,53 @@ font-size: .6rem;
       color: #fff;
       border-color: #f2e6c6;
     }
-        .heart-btn i{
-          color: #ddd;
-      transition: all 0.3s ease;
-    }
 
-    .heart-btn i:hover,
-    .heart-btn i.active {
-      background-color: #fff !important; /* Bootstrap red */
-      color: #dc3545 !important;
-      border-color: #dc3545 !important;
+    .Product-Details-Section ul {
+  padding-left: 1rem;
+  font-size: 1.05rem;
+  color: #353535;
+}
+.Product-Details-Section .offers {
+  font-size: 0.97rem;
+}
+.Product-Description-Bottom .nav-link.active {
+  background-color: transparent !important;
+  color: #b67e53 !important;
+  border-color: #b67e53 !important;
+}
+.Product-Description-Bottom .nav-link {
+  font-size: 2rem;
+  font-weight: 400;
+
+}
+.desc-tab-list{
+  gap: 3rem;
+}
+.Ingredients-section .list-group-item {
+  border-color: #eee;
+  padding-top: 1.2rem;
+  padding-bottom: 1.2rem;
+  font-size: 1rem;
+}
+.Ingredients-section .list-group-item:last-child {
+  border-bottom: 1px solid #eee !important;
+}
+    @media (max-width: 768px) {
+      .main-image img {
+        height: 320px;
+      }
+      .thumbnails {
+        flex-direction: row !important;
+        justify-content: center;
+      }
+      .Product-Description-Bottom .nav-link {
+  font-size: 1.2rem;
+  font-weight: 600;
+
+}
+      .desc-tab-list{
+  gap: 1rem;
+}
     }
 /* Product-Details-section-End */
 /* Cart-Popup-section-Start */

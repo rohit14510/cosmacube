@@ -177,17 +177,19 @@
     slidesPerView: 2,        
     spaceBetween: 20,
     loop: true,
-    autoplay: {
-      delay: 1500,
-      disableOnInteraction: false,
-    },
+  speed: 900, 
+  effect: "slide", 
+  autoplay: {
+    delay: 2500,
+    disableOnInteraction: false,
+  },
     pagination: {
-      el: ".swiper-pagination",
+      el: ".heroSlider-pagination",
       clickable: true,
     },
     navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
+      nextEl: ".heroSlider-next",
+      prevEl: ".heroSlider-prev",
     },
     breakpoints: {
       0: {
@@ -302,5 +304,7 @@
 
       currentIndex = index;
     }
+
+    
 
     
