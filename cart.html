@@ -471,7 +471,7 @@
               </div>
 
               <!-- Cart Item Row (Desktop and Mobile) -->
-              <div class="row align-items-center py-3 border-bottom flex-wrap">
+              <div class="row align-items-center py-3 border-bottom flex-wrap" style="background-color:#fff;">
                 <!-- Thumbnail -->
                 <div class="col-4 col-md-2 text-center">
                   <img
@@ -484,7 +484,7 @@
                 <!-- Product Info -->
                 <div class="col-8 col-md-3">
                   <div class="fw-bold">Moisturizer Summer Skin</div>
-                  <div class="text-muted">SKU: G1245</div>
+                  <div class="text-muted">125ml</div>
                 </div>
                 <!-- Price -->
                 <div class="col-6 col-md-2 mt-2 mt-md-0">
@@ -494,17 +494,11 @@
                 <div
                   class="col-6 col-md-3 d-flex align-items-center justify-content-md-start justify-content-end mt-2 mt-md-0"
                 >
-                  <div class="input-group" style="max-width: 150px">
-                    <button  id="decrement" class="btn cart-popup-action btn-sm">-</button>
-                    <span
-                    id="quantity"
-                      type="text"
-                      class="form-control form-control-sm text-center"
-                      style="max-width: 40px"
-                      >1
-                    </span>
-                    <button id="increment" class="btn cart-popup-action btn-sm">+</button>
-                  </div>
+                 <div class="d-flex border border-1 rounded-1">
+                <button class="qty-btn" onclick="decreaseQty()">−</button>
+                <input type="text" class="qty-input " id="qtyInput" value="1" readonly />
+                <button class="qty-btn" onclick="increaseQty()">+</button>
+              </div>
                 </div>
                 <!-- Total + Actions -->
                 <div

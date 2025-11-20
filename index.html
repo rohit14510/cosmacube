@@ -16,6 +16,11 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
     />
+    <!-- Bootstrap Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.min.css"
+    />
     <link rel="stylesheet" href="./assets/Css/style.css" />
   </head>
   <body>
@@ -540,22 +545,26 @@
                         <span class="old-price">₹800.00</span>
                         <span class="new-price">₹499.00</span>
                       </p>
-                      <button class="btn quantity-button btn-sm rounded-pill px-3">125 ml</button>
+                      <button
+                        class="btn quantity-button btn-sm rounded-pill px-3"
+                      >
+                        125 ml
+                      </button>
                       <ul class="product-details-list">
                         <li>Gently cleanses without stripping natural oils</li>
                         <li>Hydrates as it cleanses</li>
                         <li>For dry to normal, sensitive skin</li>
                       </ul>
-                <div class="text-center ">
+                      <div class="text-center">
                         <button
-                        type="button"
-                        class="cart-button btn btn-sm"
-                        data-bs-toggle="modal"
-                        data-bs-target="#cartPopupModal"
-                      >
-                        <i class="fas fa-shopping-cart me-1"></i> Add to Cart
-                      </button>
-                </div>
+                          type="button"
+                          class="cart-button btn btn-sm"
+                          data-bs-toggle="modal"
+                          data-bs-target="#cartPopupModal"
+                        >
+                          <i class="fas fa-shopping-cart me-1"></i> Add to Cart
+                        </button>
+                      </div>
                     </div>
                   </div>
 
@@ -1131,140 +1140,81 @@
     </section>
     <!-- ======Banner-Section-End====== -->
     <!-- ======Cart-Popup-Section-Start====== -->
-    <div
-      class="modal fade cart-modal"
-      id="cartPopupModal"
-      tabindex="-1"
-      aria-labelledby="cartPopupLabel"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog cart-modal-dialog" style="max-width: 420px">
-        <div class="modal-content p-0 border-0 bg-transparent">
-          <div
-            class="Cart-Popup-Section position-fixed top-0 end-0 bg-light border shadow p-3 d-flex flex-column"
-            style="
-              width: 400px;
-              height: 100vh;
-              z-index: 1050;
-              font-family: 'Poppins', sans-serif;
-            "
-          >
-            <!-- Top: Product Section -->
-            <div>
-              <div
-                class="d-flex justify-content-between align-items-center mb-3"
-              >
-                <h5 class="mb-0">
-                  Cart Item
-                  <span class="badge rounded-circle bg-secondary">1</span>
-                </h5>
-                <a
-                  href="#"
-                  class="text-muted text-decoration-underline"
-                  style="font-size: 0.8rem"
-                  >Clear All</a
-                >
-                <button
-                  type="button"
-                  class="btn-close cart-close-btn"
-                  aria-label="Close"
-                ></button>
-              </div>
-              <div class="d-flex mb-3">
-                <div
-                  class="me-3"
-                  style="
-                    width: 70px;
-                    height: 70px;
-                    background-color: #f0f0f0;
-                    border-radius: 10px;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                  "
-                >
-                  <img
-                    src="assets/images/pu-1.png"
-                    alt="product image"
-                    class="img-fluid"
-                    style="max-height: 50px; max-width: 50px"
-                  />
-                </div>
-                <div
-                  class="flex-grow-1 d-flex flex-column justify-content-center"
-                >
-                  <p class="mb-2">Moisturizer Summer Skin</p>
-                  <div class="d-flex align-items-center">
-                    <button
-                      id="decrement"
-                      class="btn cart-popup-action btn-sm px-2"
-                    >
-                      -
-                    </button>
-                    <span
-                      id="quantity"
-                      type="text"
-                      class="form-control form-control-sm text-center mx-1"
-                      style="width: 40px"
-                      >1</span
-                    >
-                    <button
-                      id="increment"
-                      class="btn cart-popup-action btn-sm px-2"
-                    >
-                      +
-                    </button>
-                  </div>
-                </div>
-                <div
-                  class="d-flex align-items-center ms-2 fw-bold"
-                  style="font-size: 1.2rem"
-                >
-                  <p class="m-0">₹44.00</p>
-                  <button
-                    class="btn bg-white border ms-2"
-                    aria-label="Delete item"
-                    style="font-size: 1rem"
-                  >
-                    <i class="fa-solid fa-trash" style="color: #000"></i>
-                  </button>
-                </div>
-              </div>
+  <div
+  class="modal fade cart-side-modal"
+  id="cartPopupModal"
+  tabindex="-1"
+  aria-hidden="true"
+>
+  <div class="modal-dialog cart-side-modal-dialog">
+    <div class="cart-side-modal-content">
+
+      <!-- Close Button -->
+      <button type="button" class="close-btn" data-bs-dismiss="modal">
+        <i class="bi bi-x"></i>
+      </button>
+
+      <!-- Cart Header -->
+      <div class="cart-header">Shopping Cart</div>
+
+      <!-- Progress Section -->
+      <div class="progress-section">
+        <div class="progress-text">Add 1 more products to get 10% Off</div>
+
+        <div class="custom-progress">
+          <div class="progress-icon active"><i class="bi bi-gift-fill"></i></div>
+          <div class="progress-icon active"><i class="bi bi-gift-fill"></i></div>
+          <div class="progress-icon inactive"><i class="bi bi-gift"></i></div>
+          <div class="progress-icon inactive"><i class="bi bi-gift"></i></div>
+        </div>
+      </div>
+
+      <!-- Product Section -->
+      <div class="product-section">
+        <div class="product-card">
+          <img src="assets/images/b-1.webp" class="product-image" />
+          <div class="product-details">
+            <div class="product-title">
+              Red Embroidered Cotton Flex Kurta and Pant Set
             </div>
 
-            <div class="mt-auto">
-              <hr />
-              <div
-                class="d-flex justify-content-between align-items-center mb-3"
-              >
-                <span>Subtotal</span>
-                <span>₹44.00</span>
+            <div class="product-size"><strong>Size:</strong> M-38</div>
+            <div class="product-price">Rs. 1,299.00</div>
+
+            <div class="quantity-controls">
+              <div class="d-flex border border-1 rounded-1">
+                <button class="qty-btn" onclick="decreaseQty()">−</button>
+                <input type="text" class="qty-input " id="qtyInput" value="1" readonly />
+                <button class="qty-btn" onclick="increaseQty()">+</button>
               </div>
-              <div
-                class="d-flex justify-content-between align-items-center fw-bold mb-3"
-              >
-                <span>Total</span>
-                <span>₹44.00</span>
-              </div>
-              <div class="d-flex">
-                <a
-                  href="cart.html"
-                  class="btn btn-outline-dark flex-grow-1 me-2"
-                >
-                  VIEW CART
-                </a>
-                <button
-                  class="btn btn-success flex-grow-1 border-0"
-                  style="background-color: #b67e53"
-                >
-                  CHECKOUT
-                </button>
-              </div>
+              <a href="#" class="remove-btn">Remove</a>
             </div>
           </div>
         </div>
+        
       </div>
+
+      <!-- Footer -->
+      <div class="cart-footer">
+        <div class="offers-section">
+          <div class="offer-badge">BUY 2 GET 10% OFF</div>
+          <div class="offer-badge">BUY 3 GET 15% OFF</div>
+        </div>
+
+        <div class="subtotal-row">
+          <div class="subtotal-label">Subtotal</div>
+          <div class="subtotal-amount">Rs. 1,299.00</div>
+        </div>
+
+        <button class="checkout-btn">
+          <span>Checkout</span> <img class="ms-2" src="assets/images/upi-icon.png" width="15%" alt="">
+          <i class="bi bi-chevron-right"></i>
+        </button>
+      </div>
+
     </div>
+  </div>
+</div>
 
     <!-- ======Cart-Popup-Section-End====== -->
     <!-- ======Footer-Section-Start====== -->
