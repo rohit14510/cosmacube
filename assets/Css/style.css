@@ -1832,6 +1832,248 @@ a {
 
 /* Cart-Popup-section-End */
 /* Cart-Pages-Start */
+
+  .cart-section {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 15px;
+  }
+
+  /* Header (Desktop Only) */
+  .cart-page-header {
+    display: none;
+    background-color: #b67e53;
+    color: #ffffff;
+    font-weight: 700;
+    padding: 12px 0;
+    font-size: 18px;
+  }
+
+  /* Cart Row - Mobile: Image Left, Content Right */
+  .cart-row {
+    display: flex;
+    flex-wrap: nowrap;
+    background-color: #ffffff;
+    padding: 15px;
+    border-bottom: 1px solid #dee2e6;
+    gap: 0px;
+  }
+
+  /* Thumbnail - Left Side (Mobile) */
+  .cart-item.thumbnail {
+    flex: 0 0 80px;
+    display: flex;
+    align-items: flex-start;
+  }
+
+  .cart-item.thumbnail img {
+    width: 100%;
+    max-width: 80px;
+    height: auto;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+  }
+
+  /* Mobile Content - Right Side */
+  .mobile-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  /* Product Info */
+  .cart-product-info{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .product-name {
+    font-weight: 700;
+    font-size: 16px;
+    color: #212529;
+    margin-bottom: 4px;
+  }
+
+  .product-size {
+    color: #6c757d;
+    font-size: 14px;
+  }
+
+  /* Price, Quantity, Total Info */
+  .price-info,
+  .quantity-info,
+  .total-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .label {
+    font-weight: 600;
+    font-size: 14px;
+    color: #495057;
+    min-width: 70px;
+  }
+
+  .value {
+    font-weight: 700;
+    font-size: 15px;
+    color: #212529;
+  }
+
+  /* Quantity Controls */
+  .qty-wrapper {
+    display: flex;
+    border: 1px solid #dee2e6;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  .qty-btn {
+    background-color: #ffffff;
+    border: none;
+    padding: 6px 12px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    color: #495057;
+  }
+
+ 
+
+
+
+  /* Total Info */
+  .total-info {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .total-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .remove-link {
+    color: #dc3545;
+    text-decoration: underline;
+    font-size: 14px;
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+
+  .remove-link:hover {
+    color: #c82333;
+  }
+
+  /* Desktop Styles (768px and up) */
+  @media (min-width: 768px) {
+    /* Show Header on Desktop */
+    .cart-page-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .header-item {
+      text-align: center;
+    }
+
+    .header-item.image {
+      flex: 0 0 16.666%;
+    }
+
+    .header-item.title {
+      flex: 0 0 25%;
+      text-align: left;
+    }
+
+    .header-item.price {
+      flex: 0 0 16.666%;
+    }
+
+    .header-item.quantity {
+      flex: 0 0 25%;
+      text-align: left;
+    }
+
+    .header-item.total {
+      flex: 0 0 16.666%;
+      text-align: left;
+    }
+
+    /* Desktop Layout */
+    .cart-row {
+      flex-wrap: nowrap;
+      align-items: center;
+    }
+
+    /* Hide Mobile Content Wrapper */
+    .mobile-content {
+      display: contents;
+    }
+
+    /* Thumbnail */
+    .cart-item.thumbnail {
+      flex: 0 0 16.666%;
+      justify-content: center;
+    }
+
+    /* Product Info */
+    .cart-product-info{
+      flex: 0 0 25%;
+    }
+
+    /* Price Info */
+    .price-info {
+      flex: 0 0 16.666%;
+      justify-content: center;
+    }
+
+    .price-info .label {
+      display: none;
+    }
+
+    .price-info .value {
+      color: #6c757d;
+    }
+
+    /* Quantity Info */
+    .quantity-info {
+      flex: 0 0 25%;
+    }
+
+    .quantity-info .label {
+      display: none;
+    }
+
+    /* Total Info */
+    .total-info {
+      flex: 0 0 16.666%;
+      gap: 8px;
+    }
+
+    .total-info .label {
+      display: none;
+    }
+
+    .total-row {
+      gap: 0;
+    }
+
+    .total-info .value {
+      font-size: 16px;
+      margin-bottom: 8px;
+    }
+  }
+  @media (max-width: 768px){
+    .cart-row{
+      gap: 15px;
+    }
+  } 
+
 .Cart-Section .input-group .form-control {
   min-width: 40px;
   max-width: 40px;

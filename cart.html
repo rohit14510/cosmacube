@@ -17,6 +17,8 @@
       href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
     />
     <link rel="stylesheet" href="./assets/Css/style.css" />
+
+
   </head>
   <body>
     <!-- Announcement Bar -->
@@ -458,61 +460,61 @@
       <div class="container py-5">
         <div class="row g-4">
           <div class="col-lg-8">
-            <div class="Cart-Section container my-4">
-              <!-- Table Header -->
-              <div
-                class="row text-white  fw-bold py-2 d-none d-md-flex " style="background-color: #b67e53;"
-              >
-                <div class="col-md-2 text-center">Image</div>
-                <div class="col-md-3">Product Title</div>
-                <div class="col-md-2">Price</div>
-                <div class="col-md-3">Quantity</div>
-                <div class="col-md-2">Total</div>
-              </div>
+          <div class="cart-section">
+  <!-- Table Header (Desktop Only) -->
+  <div class="cart-page-header">
+    <div class="header-item image">Image</div>
+    <div class="header-item title">Product Title</div>
+    <div class="header-item price">Price</div>
+    <div class="header-item quantity">Quantity</div>
+    <div class="header-item total">Total</div>
+  </div>
 
-              <!-- Cart Item Row (Desktop and Mobile) -->
-              <div class="row align-items-center py-3 border-bottom flex-wrap" style="background-color:#fff;">
-                <!-- Thumbnail -->
-                <div class="col-4 col-md-2 text-center">
-                  <img
-                    src="assets/images/pu-1.png"
-                    class="img-fluid shadow-sm"
-                    style="max-width: 70px"
-                    alt="Thumbnail"
-                  />
-                </div>
-                <!-- Product Info -->
-                <div class="col-8 col-md-3">
-                  <div class="fw-bold">Moisturizer Summer Skin</div>
-                  <div class="text-muted">125ml</div>
-                </div>
-                <!-- Price -->
-                <div class="col-6 col-md-2 mt-2 mt-md-0">
-                  <div class="fw-bold text-muted">₹44.00</div>
-                </div>
-                <!-- Quantity Controls -->
-                <div
-                  class="col-6 col-md-3 d-flex align-items-center justify-content-md-start justify-content-end mt-2 mt-md-0"
-                >
-                 <div class="d-flex border border-1 rounded-1">
-                <button class="qty-btn" onclick="decreaseQty()">−</button>
-                <input type="text" class="qty-input " id="qtyInput" value="1" readonly />
-                <button class="qty-btn" onclick="increaseQty()">+</button>
-              </div>
-                </div>
-                <!-- Total + Actions -->
-                <div
-                  class="col-12 col-md-2 mt-2 mt-md-0 text-md-start text-end"
-                >
-                  <div class="fw-bold mb-2">₹44.00</div>
-                  <a
-                    href="#"
-                    class="d-block text-decoration-underline text-dark mb-1"
-                    >Remove</a
-                  >
-                </div>
-              </div>
-            </div>
+  <!-- Cart Item Row -->
+  <div class="cart-row">
+    <!-- Thumbnail (Left Side on Mobile) -->
+    <div class="cart-item thumbnail">
+      <img
+        src="assets/images/pu-1.png"
+        alt="Thumbnail"
+      />
+    </div>
+    
+    <!-- Right Side Content Container (Mobile) -->
+    <div class="mobile-content">
+      <!-- Product Info -->
+      <div class="cart-product-info">
+        <div class="product-name">Moisturizer Summer Skin</div>
+        <div class="product-size">125ml</div>
+      </div>
+      
+      <!-- Price Info -->
+      <div class="price-info">
+        <span class="label">Price:</span>
+        <span class="value">₹44.00</span>
+      </div>
+      
+      <!-- Quantity Controls -->
+      <div class="quantity-info">
+        <span class="label">Quantity:</span>
+        <div class="qty-wrapper">
+          <button class="qty-btn" onclick="decreaseQty()">−</button>
+          <input type="text" class="qty-input" id="qtyInput" value="1" readonly />
+          <button class="qty-btn" onclick="increaseQty()">+</button>
+        </div>
+      </div>
+      
+      <!-- Total + Remove -->
+      <div class="total-info">
+        <div class="total-row">
+          <span class="label">Total:</span>
+          <span class="value">₹44.00</span>
+        </div>
+        <a href="#" class="remove-link">Remove</a>
+      </div>
+    </div>
+  </div>
+</div>
           </div>
           <div class="col-lg-4">
             <div class="Cart-Right-Section p-4">
